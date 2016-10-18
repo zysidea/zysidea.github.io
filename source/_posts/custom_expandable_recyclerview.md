@@ -199,7 +199,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmViewHolder> {
     public int getItemViewType(int position) {
         //将布局当作viewtype
         final String stableId = getItemUUID(position);
-        return stableId != String.valueOf(RecyclerView.NO_ID) &amp;&amp; stableId.equals(mExpandedId)
+        return stableId != String.valueOf(RecyclerView.NO_ID) && stableId.equals(mExpandedId)
                 ? VIEW_TYPE_ALARM_EXPANDED : VIEW_TYPE_ALARM_COLLAPSED;
 
     }
@@ -215,7 +215,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmViewHolder> {
         }
         mExpandedId = stableId;
         mIRecyclerViewScroll.smoothScrollTo(position);
-        if (mExpandedPosition &gt;= 0) {
+        if (mExpandedPosition != 0) {
             notifyItemChanged(mExpandedPosition);
         }
         mExpandedPosition = position;
@@ -230,7 +230,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmViewHolder> {
     }
 
     //更新数据
-    public void setData(List&lt;Alarm&gt; list) {
+    public void setData(List<Alarm> list) {
         if (list != null) {
             mList.clear();
             mList.addAll(list);
@@ -302,7 +302,7 @@ public class AlarmListFragment extends Fragment implements IRecyclerViewScroll,
         final Intent intent = getActivity().getIntent();
         if (intent.hasExtra(EXTRA_SCROLL_TO_ALARM)) {
             String alarmId = intent.getStringExtra(Alarm.EXTRA_ALARM_ID);
-            if (!TextUtils.isEmpty(alarmId) &amp;&amp; !alarmId.equals(Alarm.INVALID_ID)) {
+            if (!TextUtils.isEmpty(alarmId) && !alarmId.equals(Alarm.INVALID_ID)) {
                 setSmoothScrollStableId(alarmId);
                 mLoader.forceLoad();
             }
@@ -325,13 +325,13 @@ public class AlarmListFragment extends Fragment implements IRecyclerViewScroll,
     }
 
     @Override
-    public Loader&lt;List&lt;Alarm&gt;&gt; onCreateLoader(int id, Bundle args) {
+    public Loader<List<Alarm>> onCreateLoader(int id, Bundle args) {
         Log.d(TAG, "onCreateLoader: ");
         return new AlarmAsyncTaskLoader(getActivity());
     }
 
     @Override
-    public void onLoadFinished(Loader&lt;List&lt;Alarm&gt;&gt; loader, List&lt;Alarm&gt; data) {
+    public void onLoadFinished(Loader<List<Alarm>> loader, List<Alarm> data) {
         Log.d(TAG, "onLoadFinished: ");
         mAlarmAdapter.setData(data);
         if (!mScrollId.equals(Alarm.INVALID_ID)) {
@@ -346,16 +346,15 @@ public class AlarmListFragment extends Fragment implements IRecyclerViewScroll,
      */
     private void scrollToPosition() {
         int alarmCount = mAlarmAdapter.getItemCount();
-        for (int position = 0; position &lt; alarmCount; position++) {
+        for (int position = 0; position < alarmCount; position++) {
             if (mScrollId.equals(mAlarmAdapter.getItemUUID(position))) {
                 mAlarmAdapter.expand(position);
                 break;
             }
         }
     }
-
     @Override
-    public void onLoaderReset(Loader&lt;List&lt;Alarm&gt;&gt; loader) {
+    public void onLoaderReset(Loader<List<Alarm>> loader) {
         mAlarmAdapter.setData(null);
     }
 
@@ -363,10 +362,8 @@ public class AlarmListFragment extends Fragment implements IRecyclerViewScroll,
     public void setSmoothScrollStableId(String stableId) {
         mScrollId = stableId;
     }
-
     @Override
     public void smoothScrollTo(int position) {
-
         mLinearLayoutManager.scrollToPositionWithOffset(position, 20);
     }
 }

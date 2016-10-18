@@ -84,7 +84,7 @@ public class Alarm implements Parcelable {
         this.minutes = in.readInt();
     }
 
-    public static final Creator&lt;Alarm&gt; CREATOR = new Creator&lt;Alarm&gt;() {
+    public static final Creator<Alarm> CREATOR = new Creator<Alarm>() {
         @Override
         public Alarm createFromParcel(Parcel source) {
             return new Alarm(source);
@@ -253,7 +253,7 @@ public interface IAlarmDAO {
     int updateAlarmById(Alarm alarm);
 
     //获取所有的闹钟
-    List&lt;Alarm&gt; fetchAllAlarm();
+    List<Alarm> fetchAllAlarm();
 
     //根据Id获取闹钟
     Alarm fetchAlarmById(String alarmId);
@@ -336,8 +336,8 @@ public class AlarmDAO extends DataBaseProvider implements IAlarmDAO {
     }
 
     @Override
-    public List&lt;Alarm&gt; fetchAllAlarm() {
-        List&lt;Alarm&gt; list = new ArrayList&lt;&gt;();
+    public List<Alarm> fetchAllAlarm() {
+        List<Alarm> list = new ArrayList<>();
         Cursor cursor = super.query(AlarmContract.TABLE_ALARMS_NAME, null, null, null, null);
         Log.d("TAG",cursor==null?0+"":cursor.getCount()+"");
         if (cursor != null) {

@@ -18,14 +18,14 @@ package main
 import "fmt"
 
 func fibonacci(x int) int {
-	if x &lt; 2 {
+	if x < 2 {
 		return 1
 	}
 	return fibonacci(x-1) + fibonacci(x-2)
 }
 
 func main() {
-	for i := 0; i &lt; 10; i++ {
+	for i := 0; i < 10; i++ {
 		fmt.Println(fibonacci(i))
 	}
 }
@@ -48,7 +48,7 @@ func fibonacci() func() int {
 
 func main() {
 	f := fibonacci()
-	for i := 0; i &lt; 10; i++ {
+	for i := 0; i < 10; i++ {
 		fmt.Println(f())
 	}
 }

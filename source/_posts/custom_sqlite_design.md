@@ -10,7 +10,7 @@ date: 2016-05-09 13:41:19
 ---
 
 对于复杂的数据，一般来说ContentProvider是个不错的选择，但是有时候我们并没有必要去共享数据，在比较简单的数据</span></span>情况下，下面这种封装方法非常好用
-#### 先定义一个bean，方便起见，只有id，hour，minutes三个字段
+### 先定义一个bean，方便起见，只有id，hour，minutes三个字段
 
 ```java
 public class Alarm implements Parcelable {
@@ -95,8 +95,10 @@ public class Alarm implements Parcelable {
             return new Alarm[size];
         }
     };
-    ```
-#### 定义数据库字段支持类，为数据库提供常量
+    
+```
+### 定义数据库字段支持类，为数据库提供常量
+
 ```java
 public class AlarmContract {
 
@@ -120,7 +122,7 @@ public class AlarmContract {
     }
 }
 ```
-#### 创建DataBaseOpenHelper创建本地数据库
+### 创建DataBaseOpenHelper创建本地数据库
 ```java
 public class AlarmDataBaseOpenHelper extends SQLiteOpenHelper {
 
@@ -161,7 +163,7 @@ public class AlarmDataBaseOpenHelper extends SQLiteOpenHelper {
         return mDataBaseOpenHelper;
     }
   ```
-#### 创建数据库工具类，用于打开数据库
+### 创建数据库工具类，用于打开数据库
 ```java
 public class AlarmDataBase {
 
@@ -190,7 +192,7 @@ public class AlarmDataBase {
     }
 }
 ```
-#### 创建DAO层抽象父类，提供共有的基本CRUD
+### 创建DAO层抽象父类，提供共有的基本CRUD
 ```java
 public abstract class DataBaseProvider {
 
@@ -239,7 +241,7 @@ public abstract class DataBaseProvider {
     }
 }
 ```
-#### 定义对应数据库表Alarm的操作接口，添加数据库操作均在此定义
+### 定义对应数据库表Alarm的操作接口，添加数据库操作均在此定义
 ```java
 public interface IAlarmDAO {
 
@@ -259,7 +261,7 @@ public interface IAlarmDAO {
     Alarm fetchAlarmById(String alarmId);
 }
 ```
-#### 定义AlarmDAO类，具体化数据库操作
+### 定义AlarmDAO类，具体化数据库操作
 ```java
 public class AlarmDAO extends DataBaseProvider implements IAlarmDAO {
 
@@ -363,7 +365,7 @@ public class AlarmDAO extends DataBaseProvider implements IAlarmDAO {
         return values;
     }
     ```
-#### 在Application中打开数据库
+### 在Application中打开数据库
 
 ```java
 public class MyApplication extends Application {
@@ -379,7 +381,7 @@ public class MyApplication extends Application {
     }
 }
 ```
-#### 使用例子
+### 使用例子
 
 ```java
 long alarmId = AlarmDataBase.mAlarmDAO.addAlarm(alarm);

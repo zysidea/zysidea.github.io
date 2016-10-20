@@ -9,7 +9,7 @@ tags:
 
 RecyclerView是V7包下的一个新控件，功能强大，自定义度高，可以说可以代替listview，gridview!由于高度的可自定义，RecyclerView并没有提供像ListView那样的Item点击事件，这样只能自己想办法。
 
-#### 定义一个接口：
+### 定义一个接口
 
 ```java
 public interface ItemClickListener {
@@ -17,7 +17,7 @@ public interface ItemClickListener {
      void onItemClick(Item item);
 }
 ```
-#### 继承RecyclerView.Adapter.ViewHolder重写Adapter
+### 继承RecyclerView.Adapter.ViewHolder重写Adapter
 
 ```java
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.myViewHolder> {
@@ -59,7 +59,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.myViewHolder> {
     }
 }
 ```
-#### 在对应的显示页面继承这个接口，然后实现这个接口，重写回调函数
+### 在对应的显示页面继承这个接口，然后实现这个接口，重写回调函数
 
 ```java
 @Override

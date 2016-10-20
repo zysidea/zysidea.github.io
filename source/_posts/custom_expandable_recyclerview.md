@@ -7,7 +7,7 @@ date: 2016-06-15 09:30:34
 tags:
 ---
 
-**RecyclerView**是个万花筒，比起ListView好用很多，项目需要用到可扩展的列表用来显示每一项的更多信息，Github上这样的类库有很多，无非有两种形式，第一种是在点击一个Item的时候在该Item下方添加一个子布局并且添加动画，RecyclerView的刷新函数**notifyItemInserted(position)**自带默认的插入动画。第二种就是在点击一个Item的时发返回不同的**ItemViewType**，根据不同**ItemViewType**加载不同的布局。本人是用的第二种方式实现的，有时间去亲自写一下第一种。
+**RecyclerView**是个万花筒，比起ListView好用很多，项目需要用到可扩展的列表用来显示每一项的更多信息，Github上这样的类库有很多，无非有两种形式，第一种是在点击一个Item的时候在该Item下方添加一个子布局并且添加动画，RecyclerView的刷新函数`notifyItemInserted(position)`自带默认的插入动画。第二种就是在点击一个Item的时发返回不同的**ItemViewType**，根据不同**ItemViewType**加载不同的布局。本人是用的第二种方式实现的，有时间去亲自写一下第一种。
 
 * * *
 
@@ -41,7 +41,7 @@ public abstract class AlarmViewHolder extends RecyclerView.ViewHolder {
 }
 ```
 
-#### 接下来继承上面的父类编写折叠状态时的ViewHolder
+### 接下来继承上面的父类编写折叠状态时的ViewHolder
 
 ```java
 /**
@@ -70,9 +70,9 @@ public class AlarmCollapsedViewHolder extends AlarmViewHolder {
 }
 ```
 
-先提前说下后面会提到的**AlarmAdapter**，Adapter里包涵有扩展和折叠的方法，在这里用到了里面的**expand**方法就是扩展的方法。**AlarmCollapsedViewHolder**继承AlarmViewHolder实现bindAlarm方法进行绑定alarm数据到UI界面，公共控件（应该说是同一个id）mArrow在这里是可以触发扩展事件。
+先提前说下后面会提到的**AlarmAdapter**，Adapter里包涵有扩展和折叠的方法，在这里用到了里面的`expand()`方法就是扩展的方法。**AlarmCollapsedViewHolder**继承AlarmViewHolder实现bindAlarm方法进行绑定alarm数据到UI界面，公共控件（应该说是同一个id）mArrow在这里是可以触发扩展事件。
 
-#### 下面该实现扩展的ViewHolder了，跟折叠的ViewHolder差不多
+### 下面该实现扩展的ViewHolder了，跟折叠的ViewHolder差不多
 
 ```java
 public class AlarmExpandedViewHolder extends AlarmViewHolder {
@@ -95,9 +95,9 @@ public class AlarmExpandedViewHolder extends AlarmViewHolder {
     }
 }
 ```
-与折叠ViewHolder的唯一区别就在于<span style="color: #ff6600;">mArrow<span style="color: #000000;">的点击事件触发的是收缩事件。</span></span>
+与折叠ViewHolder的唯一区别就在于**mArrow**的点击事件触发的是收缩事件。</span></span>
 
-#### 为了展开之后能够使item定位到合适的位置定义一个接口
+### 为了展开之后能够使item定位到合适的位置定义一个接口
 
 ```java
 public interface IRecyclerViewScroll {
@@ -114,7 +114,7 @@ public interface IRecyclerViewScroll {
 }
 ```
 
-#### 到这里就该写上面提到的AlarmAdaper了：
+### 到这里就该写上面提到的AlarmAdaper了
 
 ```java
 public class AlarmAdapter extends RecyclerView.Adapter<AlarmViewHolder> {
@@ -247,13 +247,13 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmViewHolder> {
     }
 }
 ```
-这个类的内容比较多，只是贴上了核心代码，整体逻辑还是比较清晰的。先声明该项目的数据库主键使用的字符串类型的UUID，所以重写**getItemId**的时候返回的是UUID的Hash值（数据库为整型的话直接返回数据库Id就行了），此方法必须重写而且返回唯一值，并且需要声明**setHasStableId(true)**，主要是为了给每一个Item一个唯一Id,这样在扩展的时候不容易乱掉。
+这个类的内容比较多，只是贴上了核心代码，整体逻辑还是比较清晰的。先声明该项目的数据库主键使用的字符串类型的UUID，所以重写**getItemId**的时候返回的是UUID的Hash值（数据库为整型的话直接返回数据库Id就行了），此方法必须重写而且返回唯一值，并且需要声明`setHasStableId(true)`，主要是为了给每一个Item一个唯一Id,这样在扩展的时候不容易乱掉。
 
-接下来我们在**getViewType**里根据不同条件返回不同的布局，返回扩展布局的条件是当前id不等于RecyclerView的默认空Id并且当前Id要等于**mExpandId**，我们可以看到在**expand**方法里我们对**mExpandId**进行的对比和赋值然后刷新布局，在**collapse**方法里讲**mExpandId**设置为初始值（-1）,这样就可以达到折叠效果。
+接下来我们在`getViewType()`里根据不同条件返回不同的布局，返回扩展布局的条件是当前id不等于RecyclerView的默认空Id并且当前Id要等于**mExpandId**，我们可以看到在`expand()`方法里我们对**mExpandId**进行的对比和赋值然后刷新布局，在`collapse()`方法里讲**mExpandId**设置为初始值（-1）,这样就可以达到折叠效果。
 
-应该可以注意到在**expand**方法里调用了**IRecyclerViewScroll**接口的**smoothScroll**方法，为什么要在这里调用它，看下这个函数的意思就知道，我们会在他的回调方法里去定位到扩展Item。
+应该可以注意到在`expand()`方法里调用了**IRecyclerViewScroll**接口的`smoothScroll()`方法，为什么要在这里调用它，看下这个函数的意思就知道，我们会在他的回调方法里去定位到扩展Item。
 
-#### 在用到RecyclerView的Activityg或者Fragment里
+### 在用到RecyclerView的Activity或者Fragment里使用
 
 ```java
 public class AlarmListFragment extends Fragment implements IRecyclerViewScroll,
@@ -369,8 +369,8 @@ public class AlarmListFragment extends Fragment implements IRecyclerViewScroll,
 }
 ```
 
-在这个Fragment里 我使用的**AsyncTaskLoader**加载数据，**onLoadFinish**里调用了**setSmoothScrollStableId(Alarm.INVALID_ID)**方法进行初始化设置，加载完成是不会扩展的，注意下**onResume**里我们也调用**setSmoothScrollStableId(alarmId)**，其实在第一次打开APP的时候**alarmId**是空的所以不会扩展，但是在这里调用的目的可以根据**Intent**看到是别的页面跳转过来，指定闹钟扩展。
+在这个Fragment里 我使用的**AsyncTaskLoader**加载数据，`onLoadFinish()`里调用了`setSmoothScrollStableId(Alarm.INVALID_ID)`方法进行初始化设置，加载完成是不会扩展的，注意下`onResume()`里我们也调用`setSmoothScrollStableId(alarmId)`，其实在第一次打开APP的时候**alarmId**是空的所以不会扩展，但是在这里调用的目的可以根据**Intent**看到是别的页面跳转过来，指定闹钟扩展。
 
-接下来看前面提到的**smoothScrollTo**，我们在这里执行了**mLinearLayoutManager.scrollToPositionWithOffest(position,20)**,这里我们用这个方法跳到指定的Item。
+接下来看前面提到的`smoothScrollTo()`，我们在这里执行了`mLinearLayoutManager.scrollToPositionWithOffest(position,20)`,这里我们用这个方法跳到指定的Item。
 这样RecyclerView就实现了完美的扩展。
 

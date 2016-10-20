@@ -10,14 +10,16 @@ date: 2016-04-15 09:58:41
 
 Android是用Java编写的，所以安装JDK是一件事。据说由于版权问题2016年开发者大会Google会宣布放弃使用OpenJdk，这之前仍然使用Oracle的版本。
 
-#### 安装JDK
+### 安装JDK（已过时）
 
 1.下载链接[OracleJDK](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，安装并配置环境变量.
 2.  配置环境变量：JAVA_HOME: &nbsp; &nbsp;...<span class="color-new">**\jdk1.x.x_xx； &nbsp; &nbsp;&nbsp;**</span>PATH : &nbsp; &nbsp;...<span class="color-new">**\jdk1.x.x_xx\bin；**</span>
 3.  之后再命令行输入&quot;**java -version**&quot;,查看是否成功。
 注意：安装JDK和JRE的时候不要安装在同一个目录，一般默认路径安装是安装在同一文件夹。
+#### <Span style="color:red">2016.10.20更新</Span>
+由于Android开发使用了JDK的另一个分支OpenSDK,并且在Android Studio 2.2里已经内置了OpenSDK，所以升级到最新的Android Studio就不用下载SDK了
 
-#### 安装Android SDK
+### 安装Android SDK
 
 1.打开Android Developer官网的[工具下载](http://developer.android.com/intl/zh-cn/sdk/index.html#Other)页面，下拉找到&quot;**Get just the command line tools**&quot;对应下载选项并且下载Windows版本的SDK工具。
 2.由于天朝的一些原因，SDK工具里的SDK Manager是无法下载SDK的,所以我们需要代理。打开国内一个Android工具网站[AndroidDevTools](http://www.androiddevtools.cn/)，下拉找到&quot;**Android SDK在线更新镜像服务器**&quot;，按照所给的镜像地址和端口对SDK Manager配置代理。
@@ -25,7 +27,7 @@ Android是用Java编写的，所以安装JDK是一件事。据说由于版权问
 4.  配置环境变量：PATH: ...\android-sdk-windows\platform-tools &nbsp;, &nbsp; ...\android-sdk-windows\tools.
 5.  打开命令行工具，输入&quot;adb&quot;查看是否配置成功。
 
-#### 安装Android Studio
+### 安装Android Studio
 
 1. 打开Android Developer官网的[工具下载](http://developer.android.com/intl/zh-cn/sdk/index.html#Other)页面，下拉找到&quot;**Select a different platform**&quot;对应下载选项并且下载Windows版本的不包含SDK的Android Studio,建议免安装版。
 2. Android Studio 比较吃内存，所以建议到Android Studio的bin目录找到&quot;**studio64.exe.vmoptions**&quot;（64位系统），打开找到非注释的第二行&quot;**-Xmx**&quot;修改为2048或者4096.&quot;**-Xmx&quot;** 参数是 Java 虚拟机启动时的参数，用于限制最大堆内存。Android Studio 启动时设置了这个参数，并且默认值很小，没记错的话，只有 1028m。 一旦你的工程变大，IDE 运行时间稍长，内存就开始吃紧，频繁触发 GC，自然会卡。

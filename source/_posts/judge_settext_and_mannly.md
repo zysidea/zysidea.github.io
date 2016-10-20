@@ -33,13 +33,13 @@ date: 2016-01-06 22:07:25
 但是，这样很有欠缺，比如用于手动输入在代码赋值删掉再输入。。。。。，很快这个办法就不适用了！
 对于这样的很头疼的的需求，想了半天最终想到了下面的办法
 
-#### 定义一个全局变量，用于判断
+### 定义一个全局变量，用于判断
 
 ```java
 private boolean isTextSetProgrammatically; //用于判断是否是通过 setText输入的
 
 ```
-#### 自定义一个赋值方法
+### 自定义一个赋值方法
 
 ```java
 private void setTextProgrammatically(String text) {
@@ -51,7 +51,7 @@ private void setTextProgrammatically(String text) {
 
 ```
 
-#### EditText输入监听事件</span></span>
+### EditText输入监听事件
 
 ```java
 //监听 输入改变

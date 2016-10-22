@@ -2,20 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://coderzys.com/baidu_verify_QaQENCDixR.html</loc>
-    
-    <lastmod>2016-10-22T07:58:56.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://coderzys.com/google2a396e80f2a59b97.html</loc>
-    
-    <lastmod>2016-10-22T07:24:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://coderzys.com/about/index.html</loc>
     
     <lastmod>2016-10-21T17:15:37.000Z</lastmod>
@@ -30,28 +16,7 @@
   </url>
   
   <url>
-    <loc>http://coderzys.com/2016/01/06/judge_settext_and_mannly/</loc>
-    
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://coderzys.com/2015/12/01/add_itemclick_recyclerview/</loc>
-    
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://coderzys.com/2016/04/15/make_android_env/</loc>
-    
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://coderzys.com/2016/05/09/custom_sqlite_design/</loc>
     
     <lastmod>2016-10-20T11:22:11.000Z</lastmod>
     
@@ -65,7 +30,28 @@
   </url>
   
   <url>
+    <loc>http://coderzys.com/2016/05/09/custom_sqlite_design/</loc>
+    
+    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://coderzys.com/2016/01/06/judge_settext_and_mannly/</loc>
+    
+    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://coderzys.com/2016/05/30/go_fibonacci/</loc>
+    
+    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://coderzys.com/2016/04/15/make_android_env/</loc>
     
     <lastmod>2016-10-20T11:22:11.000Z</lastmod>
     

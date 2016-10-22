@@ -5,6 +5,7 @@
     
     
     
+    
   <url>
     <loc>http://coderzys.com/2016/10/20/RXJava_1/</loc>
     <lastmod>2016-10-21T16:02:31.000Z</lastmod>
@@ -14,64 +15,6 @@
         <pubTime>2016-10-20T02:26:43.000Z</pubTime>
         
         <tag>RXJava</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderzys.com/2015/12/01/add_itemclick_recyclerview/</loc>
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>为RecyclerView添加ItemClick</title>
-        <pubTime>2015-12-01T15:52:14.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderzys.com/2016/06/15/custom_expandable_recyclerview/</loc>
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>自定义可扩展式ExpandableRecyclerVIew</title>
-        <pubTime>2016-06-15T01:30:34.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderzys.com/2016/05/09/custom_sqlite_design/</loc>
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android数据库方法封装</title>
-        <pubTime>2016-05-09T05:41:19.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>SQLite</tag>
          
          
            
@@ -108,19 +51,17 @@
 
     
   <url>
-    <loc>http://coderzys.com/2016/05/30/go_fibonacci/</loc>
+    <loc>http://coderzys.com/2015/12/01/add_itemclick_recyclerview/</loc>
     <lastmod>2016-10-20T11:22:11.000Z</lastmod>
     <data>
         <display>
-        <title>初涉Go实现斐波纳契数</title>
-        <pubTime>2016-05-30T08:31:05.000Z</pubTime>
+        <title>为RecyclerView添加ItemClick</title>
+        <pubTime>2015-12-01T15:52:14.000Z</pubTime>
         
-        <tag>Golang</tag>
-         
          
            
              
-              <breadCrumb title="Golang" url="http://coderzys.com/categories/Golang/"/>
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
           
         </display>
     </data>
@@ -141,6 +82,66 @@
            
              
               <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderzys.com/2016/05/09/custom_sqlite_design/</loc>
+    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android数据库方法封装</title>
+        <pubTime>2016-05-09T05:41:19.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>SQLite</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderzys.com/2016/06/15/custom_expandable_recyclerview/</loc>
+    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
+    <data>
+        <display>
+        <title>自定义可扩展式ExpandableRecyclerVIew</title>
+        <pubTime>2016-06-15T01:30:34.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderzys.com/2016/05/30/go_fibonacci/</loc>
+    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
+    <data>
+        <display>
+        <title>初涉Go实现斐波纳契数</title>
+        <pubTime>2016-05-30T08:31:05.000Z</pubTime>
+        
+        <tag>Golang</tag>
+         
+         
+           
+             
+              <breadCrumb title="Golang" url="http://coderzys.com/categories/Golang/"/>
           
         </display>
     </data>

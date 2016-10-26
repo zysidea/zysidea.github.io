@@ -4,6 +4,140 @@
 
     
   <url>
+    <loc>http://coderzys.com/2015/12/01/add_itemclick_recyclerview/</loc>
+    <lastmod>2016-10-26T05:53:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>为RecyclerView添加ItemClick点击事件</title>
+        <pubTime>2015-12-01T15:52:14.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderzys.com/2016/10/26/android-event-dispatch/</loc>
+    <lastmod>2016-10-26T02:50:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android事件分发机制总结</title>
+        <pubTime>2016-10-26T02:43:06.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderzys.com/2016/06/15/custom_expandable_recyclerview/</loc>
+    <lastmod>2016-10-26T02:45:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>自定义可扩展式ExpandableRecyclerVIew</title>
+        <pubTime>2016-06-15T01:30:34.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderzys.com/2016/04/15/make_android_env/</loc>
+    <lastmod>2016-10-26T02:44:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android开发环境搭建</title>
+        <pubTime>2016-04-15T01:58:41.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderzys.com/2016/01/06/judge_settext_and_mannly/</loc>
+    <lastmod>2016-10-26T02:44:31.000Z</lastmod>
+    <data>
+        <display>
+        <title>区分EditText是代码赋值还是手动输入赋值</title>
+        <pubTime>2016-01-06T14:07:25.000Z</pubTime>
+        
+        <tag>EditText</tag>
+         
+        <tag>TextWatcher</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderzys.com/2016/05/30/go_fibonacci/</loc>
+    <lastmod>2016-10-26T02:44:25.000Z</lastmod>
+    <data>
+        <display>
+        <title>初涉Go实现斐波纳契数</title>
+        <pubTime>2016-05-30T08:31:05.000Z</pubTime>
+        
+        <tag>Go</tag>
+         
+         
+           
+             
+              <breadCrumb title="Go" url="http://coderzys.com/categories/Go/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://coderzys.com/2016/05/09/custom_sqlite_design/</loc>
+    <lastmod>2016-10-26T02:44:16.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android数据库方法封装</title>
+        <pubTime>2016-05-09T05:41:19.000Z</pubTime>
+        
+        <tag>SQLite</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://coderzys.com/2016/10/20/RXJava_1/</loc>
     <lastmod>2016-10-23T12:47:55.000Z</lastmod>
     <data>
@@ -23,128 +157,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://coderzys.com/2015/12/01/add_itemclick_recyclerview/</loc>
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>为RecyclerView添加ItemClick</title>
-        <pubTime>2015-12-01T15:52:14.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderzys.com/2016/06/15/custom_expandable_recyclerview/</loc>
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>自定义可扩展式ExpandableRecyclerVIew</title>
-        <pubTime>2016-06-15T01:30:34.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderzys.com/2016/05/09/custom_sqlite_design/</loc>
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android数据库方法封装</title>
-        <pubTime>2016-05-09T05:41:19.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>SQLite</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderzys.com/2016/01/06/judge_settext_and_mannly/</loc>
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>区分EditText是代码赋值还是手动输入赋值</title>
-        <pubTime>2016-01-06T14:07:25.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-        <tag>EditText</tag>
-         
-        <tag>TextWatcher</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderzys.com/2016/05/30/go_fibonacci/</loc>
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>初涉Go实现斐波纳契数</title>
-        <pubTime>2016-05-30T08:31:05.000Z</pubTime>
-        
-        <tag>Golang</tag>
-         
-         
-           
-             
-              <breadCrumb title="Golang" url="http://coderzys.com/categories/Golang/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://coderzys.com/2016/04/15/make_android_env/</loc>
-    <lastmod>2016-10-20T11:22:11.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android开发环境搭建</title>
-        <pubTime>2016-04-15T01:58:41.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://coderzys.com/2015/12/10/keep_CPU_run/</loc>

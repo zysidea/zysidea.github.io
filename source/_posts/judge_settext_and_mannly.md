@@ -1,7 +1,6 @@
 ---
 title: 区分EditText是代码赋值还是手动输入赋值
 tags:
-  - Android
   - EditText
   - TextWatcher
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 为RecyclerView添加ItemClick
+title: 为RecyclerView添加ItemClick点击事件
 categories:
   - Android
 id: 53
@@ -30,7 +30,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.myViewHolder> {
         this.mListener=listener;
     } @Override
     public myViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(mContext).inflate(R.layout.xx, parent, false);
         return new myViewHolder(view);
     }
@@ -63,9 +62,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.myViewHolder> {
 
 ```java
 @Override
-    public void onItemClick(View itemView, int position) {
+public void onItemClick(View itemView, int position) {
 
-    }
+}
 ```
 对于第二部中把传入接口的参数放到Adapter的构造方法中只是一种方法，也可以自定义一个函数，来传参，并传递给Adapter的全局变量即可。
 

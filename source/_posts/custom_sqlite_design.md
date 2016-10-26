@@ -1,7 +1,6 @@
 ---
 title: Android数据库方法封装
 tags:
-  - Android
   - SQLite
 categories:
   - Android

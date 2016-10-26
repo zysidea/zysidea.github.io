@@ -1,21 +1,21 @@
 ---
-title: RXJava的使用一
+title: 使用RxJava
 date: 2016-10-20 10:26:43
+toc: true
 tags:
-- RXJava
+- RxJava
 categories:
 - Android
 ---
 
-很惭愧这么晚才接触RXJava,更惭愧在接触到之后没有立即亲自使用。偶然间的惊鸿一瞥发现原来异步可以这么有这么简单优雅的方式。
-[RxJava](https://github.com/ReactiveX/RxJava)是[ReactiveX](https://mcxiaoke.gitbooks.io/rxdocs/content/Observables.html)的一个分支，还有RxJS,RxSwift等等。RxJava的观察者模式只是一个最基本的标准，而真正强大的地方是它的**Operators**（操作符），各种变化，组合，数据操作等，本文先介绍基本的使用方法，然后再对所有的Operators进行一个全面的使用测试，我相信光看文档是不够的，好记性不如烂笔头。
+很惭愧这么晚才接触RXJava,更惭愧在接触到之后没有立即亲自使用。偶然间的惊鸿一瞥发现原来异步可以有这么简单优雅的方式。
+[RxJava](https://github.com/ReactiveX/RxJava)是[ReactiveX](https://mcxiaoke.gitbooks.io/rxdocs/content/Observables.html)的一个分支，还有RxJS,RxSwift等等。RxJava的观察者模式只是一个最基本的标准，而真正强大的地方是它的**Operators**（操作符），各种变化，组合，数据操作等。
 
 Reactive的意思是响应式，最核心的两个东西是**Observer**（观察者）和**Observable**（被观察者）,Observer对Observable的动作做出响应，有时Observer也叫做Subscriber。借用官网的一张图如下：
-![](media/14769325306453.jpg)
+![](http://ofcnzxaa4.bkt.clouddn.com/RxJava.jpg)
 
 ### RxJava是什么
-RxJava 在 GitHub 主页上的自我介绍是:
-> "a library for composing asynchronous and event-based programs using observable sequences for the Java VM"（一个在 Java VM 上使用可观测的序列来组成异步的、基于事件的程序的库）。
+RxJava在GitHub主页上的自我介绍是:"a library for composing asynchronous and event-based programs using observable  sequences for the Java VM"（一个在Java VM上使用可观测的序列来组成异步的、基于事件的程序的库）。
 
 ### 什么是基于事件
 **基于事件**这个名词猛一看不好理解，换个角度，我们想象成工厂流水线，流水线上有多个工人，每个工人对产品的处理就当成一个事件，我们对数据的每一次操作就想象成每个流水线上的工人对产品的处理，产品处理完毕之后交给产品经理相当于数据处理完毕之后响应的操作。
@@ -40,6 +40,7 @@ new Thread(new Runnable() {
 ```
 这里肯定有人说你遍历个数组还要开一个线程多此一举吧？我这只是在示例，当然实际的时候我们用来做一些耗时任务。如果我们使用了Handler或者AsyncTask代码量也是一堆。
 #### 再来RxJava实现的
+
 ```java
 final String[] names = {"A", "B", "C"};
 Observable.from(names)
@@ -52,6 +53,7 @@ Observable.from(names)
         }
     });
 ```
+
 虽然代码量看着没有很明显的减少很多，但是逻辑更加清晰，如果使用Lambda更为简洁。
 
 ```java
@@ -60,12 +62,14 @@ Observable.from(names)
     .subscribeOn(Schedulers.io())
     .observeOn(AndroidSchedulers.mainThread())
     .subscribe(s -> mList.add(s));
-``` 
-### RxJava的观察者模式基本用法
-Obeservable和Observer之间通过`subscribe()`（订阅）方法相关联，一个Observable可以发出零个或者多个事件，直到结束或者出错。每发出一个事件，就会调用它的Subscriber的`onNext()`方法，最后调用`Subscriber.onNext()`或者`Subscriber.onError()`结束。可能有时候我们只会用到其中的一个，比如上面例子中只是用了`onNext()`，所以我们使用了Action1<T>,当然还有Action2，Action3....,区别是参数的个数不一样，这里只需要传递一个字符串，所以就选择了Action1。
-### 创建Observable
-#### 最基本的`create()`
+```
 
+### RxJava的观察者模式
+Obeservable和Observer之间通过`subscribe()`（订阅）方法相关联，一个Observable可以发出零个或者多个事件，直到结束或者出错。每发出一个事件，就会调用它的Subscriber的`onNext()`方法，最后调用`Subscriber.onNext()`或者`Subscriber.onError()`结束。可能有时候我们只会用到其中的一个，比如上面例子中只是用了`onNext()`，所以我们使用了Action1<T>,当然还有Action2，Action3....,区别是参数的个数不一样，这里只需要传递一个字符串，所以就选择了Action1。
+
+### 创建Observable
+
+#### 最基本的create()
 ```java
 Observable<String> observable = Observable.create(new Observable.OnSubscribe<String>() {
         @Override
@@ -77,10 +81,11 @@ Observable<String> observable = Observable.create(new Observable.OnSubscribe<Str
         }
 });
 ```
+
 这里用的了一个新的名词**Subscriber**，这个类是对Observer的扩展，多了两个主要的方法。
 
 * `onStart()`:在Observable发出消息之前做一些初始化的操作
-*  `unsubscribe()`:用于取消订阅，在执行此方法之前可以用`isUnsubscribed()`进行判断，这两个方法都是继承的另一个接口**Subscription**的抽象方法。取消订阅的重要性不言而喻，及时释放引用防止OOM。
+* `unsubscribe()`:用于取消订阅，在执行此方法之前可以用`isUnsubscribed()`进行判断，这两个方法都是继承的另一个接口**Subscription**的抽象方法。取消订阅的重要性不言而喻，及时释放引用防止OOM。
 
 #### 常见的just()和from()
 ```java
@@ -206,9 +211,9 @@ Observable.from(folders)
     });
 ```
 可以很明显的感觉到随着业务逻辑的繁琐，传统方式的代码越来越臃肿而且思路不明确。
-flatMap跟map类似，区别在于flatMap的回调方法返回的是一个Observables，flatMap()操作符使用你提供的原本会被原始Observable发送的事件，来创建一个新的Observable。而且这个操作符，返回的是一个自身发送事件并合并结果的Observable。
-filter操作就是过滤，这里是过滤掉大于1M的图片。
-take操作是取出来前几个，当然还有takeLast取出来倒数几个等等。
+**flatMap**跟map类似，区别在于flatMap的回调方法返回的是一个Observables，flatMap()操作符使用你提供的原本会被原始Observable发送的事件，来创建一个新的Observable。而且这个操作符，返回的是一个自身发送事件并合并结果的Observable。
+**filter**操作就是过滤，这里是过滤掉大于1M的图片。
+**take**操作是取出来前几个，当然还有takeLast取出来倒数几个等等。
 
 ### 创建Observer
 
@@ -218,12 +223,12 @@ Observer<String> observer = new Observer<String>() {
     public void onNext(String s) {
 
     }
- 
+
     @Override
     public void onCompleted() {
         Log.d(tag, "Completed!");
     }
- 
+
     @Override
     public void onError(Throwable e) {
         Log.d(tag, "Error!");
@@ -236,12 +241,12 @@ Subscriber<String> subscriber = new Subscriber<String>() {
     public void onNext(String s) {
         Log.d(tag, "Item: " + s);
     }
- 
+
     @Override
     public void onCompleted() {
         Log.d(tag, "Completed!");
     }
- 
+
     @Override
     public void onError(Throwable e) {
         Log.d(tag, "Error!");
@@ -249,15 +254,4 @@ Subscriber<String> subscriber = new Subscriber<String>() {
 
 ```
 
-RxJava的强大之处在于各种神奇的操作符，接下来的系列会使用各种操作符进行演示，并且会结合Retrofit2，Dagger2来使用。
-
-
-
-
-
-
-
-
-
-
-
+RxJava的强大之处在于各种神奇的操作符，并且可以结合Retrofit2，Dagger2来使用。

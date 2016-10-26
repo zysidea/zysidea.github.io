@@ -1,9 +1,9 @@
 ---
 title: 初涉Go实现斐波纳契数
 tags:
-  - Golang
+  - Go
 categories:
-  - Golang
+  - Go
 id: 204
 date: 2016-05-30 16:31:05
 ---

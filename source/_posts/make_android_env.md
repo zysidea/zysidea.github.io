@@ -1,7 +1,6 @@
 ---
 title: Android开发环境搭建
 tags:
-  - Android
 categories:
   - Android
 id: 109

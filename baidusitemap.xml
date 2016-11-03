@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://coderzys.com/2016/10/26/AndroidEventDispatch/</loc>
+    <lastmod>2016-11-03T15:54:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android事件分发机制总结</title>
+        <pubTime>2016-10-26T02:43:06.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>http://coderzys.com/2016/10/20/rxjava/</loc>
     <lastmod>2016-10-26T06:03:55.000Z</lastmod>
     <data>
@@ -138,7 +157,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://coderzys.com/2015/12/10/KeepCPURun/</loc>

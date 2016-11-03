@@ -27,7 +27,7 @@
 <ol>
 <li>首先是for循环出来child。</li>
 <li>调用<code>getTouchTarget()</code>方法来寻找<strong>mFirstTouchTarget</strong>的已经接收touch事件的子View，如      果找找到就break跳出循环。</li>
-<li>接下来是重点<code>dispatchTransformedTouchEvent()</code>方法，如果该方法返回了true表示有子View接受了touch事件，然后就是一系列的赋值并且赋值<strong>alreadyDispatchedToNewTouchTarget</strong>为true宣布找到了，如果该方法返回false表示没有View接受touch事件，也就无法调用<code>addTouchTarget()</code>导致从而导致<strong>mFirstTouchTarget</strong>为null,导致子View就无法继续处理<strong>ACTION_MOVE</strong>事件和<strong>ACTION_UP</strong>事件。</li>
+<li>接下来是重点<code>dispatchTransformedTouchEvent()</code>方法，如果该方法返回了true表示有子View接受了touch事件，然后就是一系列的赋值<strong>alreadyDispatchedToNewTouchTarget</strong>为true宣布找到了，如果该方法返回false表示没有View接受touch事件，也就无法调用<code>addTouchTarget()</code>导致从而导致<strong>mFirstTouchTarget</strong>为null,导致子View就无法继续处理<strong>ACTION_MOVE</strong>事件和<strong>ACTION_UP</strong>事件。</li>
 </ol>
 </li>
 <li>事件分发到Target，经过上面的分析<strong>mFirstTouchTarget</strong>为null就是说Touch事件未被消费。<br>则调用<strong>ViewGroup</strong>的<code>dispatchTransformedTouchEvent()</code>方法处理touch事件则和普通View一样即子View没有消费touch事件,那么子View的上层ViewGroup才会把自己当成普通View调用其<code>onTouchEvent()</code>处理touch事件。也就是说此时ViewGroup像一个普通的View那样调用dispatchTouchEvent(),且在dispatchTouchEvent()中会去调用onTouchEvent()方法。重点注意dispatchTransformedTouchEvent()时第三个参数为null。第三个参数View child为null的处理见下面对它的分析，这就是为什么子view对于Touch事件处理返回true那么其上层的ViewGroup就无法处理Touch事件了!!!</li>

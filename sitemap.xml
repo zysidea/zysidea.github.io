@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://coderzys.com/2016/10/20/rxjava/</loc>
+    
+    <lastmod>2016-11-12T15:12:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://coderzys.com/2016/11/03/AndroidEventDispatch/</loc>
     
-    <lastmod>2016-11-05T01:51:31.000Z</lastmod>
+    <lastmod>2016-11-12T15:12:46.000Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>http://coderzys.com/about/index.html</loc>
     
     <lastmod>2016-11-03T16:31:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://coderzys.com/2016/10/20/rxjava/</loc>
-    
-    <lastmod>2016-10-26T06:03:55.000Z</lastmod>
     
   </url>
   

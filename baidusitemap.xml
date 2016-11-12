@@ -4,27 +4,8 @@
 
     
   <url>
-    <loc>http://coderzys.com/2016/11/03/AndroidEventDispatch/</loc>
-    <lastmod>2016-11-05T01:51:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>Android事件分发机制总结系列一</title>
-        <pubTime>2016-11-03T15:43:06.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
     <loc>http://coderzys.com/2016/10/20/rxjava/</loc>
-    <lastmod>2016-10-26T06:03:55.000Z</lastmod>
+    <lastmod>2016-11-12T15:12:56.000Z</lastmod>
     <data>
         <display>
         <title>使用RxJava</title>
@@ -41,6 +22,25 @@
     </data>
     </url>
 
+    
+  <url>
+    <loc>http://coderzys.com/2016/11/03/AndroidEventDispatch/</loc>
+    <lastmod>2016-11-12T15:12:46.000Z</lastmod>
+    <data>
+        <display>
+        <title>Android事件分发机制总结系列一</title>
+        <pubTime>2016-11-03T15:43:06.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Android" url="http://coderzys.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://coderzys.com/2015/12/01/AddItemClickRecyclerview/</loc>

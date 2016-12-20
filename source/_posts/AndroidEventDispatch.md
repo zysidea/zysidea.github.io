@@ -1,6 +1,5 @@
 ---
 title: Android事件分发机制总结系列一
-toc: true
 categories:
   - Android
 date: 2016-11-03 23:43:06
@@ -50,7 +49,9 @@ public boolean superDispatchTouchEvent(MotionEvent event) {
 这样就传递到了ViewGroup，如果View树上都没有处理这个事件，那么就会调用`return onTouchEvent(ev);`,在Activity的`onTouchEvent()`中处理。
 
 ### ViewGroup之dispatchTouchEvent()
-现在事件传递来到ViewGroup，在ViewGroup的`dispatchTouchEvent()`中和`onInterceptTouchEvent()`以及`onTouchEvent()`的关系体现的淋漓尽致。
+
+现在事件传递来到ViewGroup，在ViewGroup的`dispatchTouchEvent()`和
+`onInterceptTouchEvent()`以及`onTouchEvent()`的关系体现的淋漓尽致。
 
 + 比如调用`onInterceptTouchEvent()`来判断是否要拦截。
 + 比如调用`dispatchTransformedTouchEvent()`方法进行事件的分发并且在该方法中判断是将事件分发给child还是自己处理
@@ -142,7 +143,7 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
                           *
                           * 如果dispatchTransformedTouchEvent()返回了false，表示
                           * 子View的onTouchEvent返回false(即Touch事件未被消费)，也就无
-                          * 法调用addTouchTarget()导致从而导致mFirstTouchTarget为null         
+                          * 法调用addTouchTarget()导致从而导致mFirstTouchTarget为null
                           * 导致子View就无法继续处理ACTION_MOVE事件和ACTION_UP事件
                           **/
                         if (dispatchTransformedTouchEvent(ev, false, child, idBitsToAssign)) {
@@ -250,7 +251,6 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
 2. 判断是否拦截，注意一下标志变量**disallowIntercept**，表示是否主动禁止ViewGroup拦截，可以调用方法`来自requestDisallowInterceptTouchEvent(boolean disallowIntercept)`来设置
 3. 第三步是判断是否是ACTION_CANCEL。
 4. 最重要的一步对ACTION_DOWN进行处理，也是最复杂的一步。
-
  1. 首先是for循环出来child。
  2. 调用`getTouchTarget()`方法来寻找**mFirstTouchTarget**的已经接收touch事件的子View，如      果找找到就break跳出循环。
  3. 接下来是重点`dispatchTransformedTouchEvent()`方法，如果该方法返回了true表示有子View接受了touch事件，然后就是一系列的赋值**alreadyDispatchedToNewTouchTarget**为true宣布找到了，如果该方法返回false表示没有View接受touch事件，也就无法调用`addTouchTarget()`导致从而导致**mFirstTouchTarget**为null,导致子View就无法继续处理**ACTION_MOVE**事件和**ACTION_UP**事件。
@@ -336,5 +336,3 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
 当**child != null**时会调用该子view(当然该view可能是一个View也可能是一个ViewGroup)的`dispatchTouchEvent(event)`处理。即`child.dispatchTouchEvent(event)`。
 
 关于View的`dispatchTouchEvent()`和`onTouchEvent()`留到系列二去分析。
-
-

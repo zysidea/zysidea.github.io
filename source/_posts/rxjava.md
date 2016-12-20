@@ -1,7 +1,6 @@
 ---
 title: 使用RxJava
 date: 2016-10-20 10:26:43
-toc: true
 tags:
 - RxJava
 categories:
@@ -54,7 +53,7 @@ Observable.from(names)
     });
 ```
 
-虽然代码量看着没有很明显的减少很多，但是逻辑更加清晰，如果使用Lambda更为简洁。
+虽然代码量看着没有很明显的减少很多，但是逻辑更加清晰，如果使用Lambda表达式更为简洁。
 
 ```java
 final String[] names = {"A", "B", "C"};
